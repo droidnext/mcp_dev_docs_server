@@ -13,7 +13,7 @@ content_dir = Path(__file__).parent.parent.parent / "content"  # Go up three lev
 # Initialize FastMCP
 mcp = FastMCP(
     "MCP Documents App",
-    description="Application documentation MCP Server",
+    # description="Application documentation MCP Server",
     instructions="""
     # Applcaition documentation MCP Server
 
@@ -58,5 +58,5 @@ async def code_examples(application_name: str, query: str, context: Context) -> 
 
 # Create FastMCP app
 # mcp_app = mcp.sse_app()
-mcp_app = mcp.http_app(path="/mcp-app-docs-server")
+mcp_app = mcp.http_app(path="/mcp-app-docs-server/mcp", transport='streamable-http')
 
